@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  neo4j:
+    image: neo4j:3.5.5
+    ports:
+      - 7687:7687
+      - 7474:7474
+    volumes:
+      - "${NETWORK_MANAGER_HOME}/neo4j/data:/var/lib/neo4j/data:rw"
+      - "${NETWORK_MANAGER_HOME}/neo4j/logs:/logs:rw"
+      - "${NETWORK_MANAGER_HOME}/neo4j/import:/var/lib/neo4j/import:rw"
+      - "${NETWORK_MANAGER_HOME}/neo4j/plugins:/plugins:rw"
+  application:
+    image: ayloro/network-manager-application:1.0.0-wfiis
+    ports:
+      - 8090:8090
+    network_mode: "host"
