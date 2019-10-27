@@ -1,10 +1,4 @@
-# network-manager-userguide
-
-To repozytorium zawiera plik docker-compose.yml oraz podręcznik użytkownika aplikacji NetworkManager.
-
-## Proces budowania obrazu
-
-# network-manager-userguide
+# network-manager-user-guide
 
 To repozytorium zawiera plik docker-compose.yml oraz podręcznik użytkownika aplikacji NetworkManager.
 
