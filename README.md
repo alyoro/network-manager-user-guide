@@ -15,7 +15,7 @@ Aplikacja jest uruchamiana jako obraz Docker'a. Poniżej lista w jaki sposób zb
 
 * Stworzyć artefakt części serwerowej (Github: networkManager): ```gradle bootJar```
 
-* Wykonać komendę budującą obraz: ```docker build -t ayloro/network-manager-server .```
+* Wykonać komendę budującą obraz (. jeśli w folderze z artefaktem /build/libs/): ```docker build -t ayloro/network-manager-server .```
 
 * Uruchomić bazę danych oraz aplikację poprzez wykonanie komendy w folderze z plikiem \textit{docker-compose.yml}: ```docker-compose up --build```
 
