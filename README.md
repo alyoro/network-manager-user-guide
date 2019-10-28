@@ -21,4 +21,17 @@ Aplikacja jest uruchamiana jako obraz Docker'a. Poniżej lista w jaki sposób zb
 
 * Po pierwszym uruchomieniu bazy danych należy udać się na stronę bazy danych(localhost:7474 lub o innym adresie np. dla Windows: 192.168.99.100:7474), aby utworzyć nowego użytkownika potrzebnego aplikacji. Aplikacja domyślnie spróbuje się połączyć za pomocą użytkownika: __networkManager__ i hasła: __appPassword__. Zmienić to można w pliku konfiguracyjnym:  ```/src/main/resources/application.yml``` Taka zmiana wymagała będzie ponownego zbudowania artefaktu części serwerowej oraz zbudowania obrazu.
 
+Do poprawnego działania aplikacji wymagane jest stworzenie kilku węzłów w bazie danych:
+
+* Tworzenie węzła do przechowywania prędkości portów
+```create (n:PortSpeed {names: ['Ethernet1Gb','Ethernet10Gb']})```
+
+* Tworzenie węzła do przechowywania VLAN
+```create (n:Vlans {names: ['vlan1','vlan2','vlan3']})```
+
+* Po utworzeniu pierwszego urządzenia należy dodać constraint który zagwaratuje unikalność urzadzeń pod względem identyfikatora
+```CREATE CONSTRAINT ON (d:DeviceNode) ASSERT d.identifier IS UNIQUE```
+
+
+
 
