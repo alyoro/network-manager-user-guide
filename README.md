@@ -2,13 +2,13 @@
 
 To repozytorium zawiera plik docker-compose.yml oraz podręcznik użytkownika aplikacji NetworkManager.
 
-[WAŻNE Po pierwszym uruchomieniu link](#Po-pierwszym-uruchomieniu)
-
 ## Proste uruchomienie
 
 Jeżeli na serwerze jest zainstalowany oraz uruchomiony docker deamon to aplikację uuruchamiamy:
 
 ```docker-compose up --build``` w folderze z plikiem *docker-compose.yml*
+
+[WAŻNE Po pierwszym uruchomieniu link](#Po-pierwszym-uruchomieniu)
 
 ## Proces budowania obrazu
 
