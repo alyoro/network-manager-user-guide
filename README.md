@@ -2,8 +2,15 @@
 
 To repozytorium zawiera plik docker-compose.yml oraz podręcznik użytkownika aplikacji NetworkManager.
 
-## Proces budowania obrazu
+[WAŻNE Po pierwszym uruchomieniu link](#Po-pierwszym-uruchomieniu)
 
+## Proste uruchomienie
+
+Jeżeli na serwerze jest zainstalowany oraz uruchomiony docker deamon to aplikację uuruchamiamy:
+
+```docker-compose up --build``` w folderze z plikiem *docker-compose.yml*
+
+## Proces budowania obrazu
 
 Aplikacja jest uruchamiana jako obraz Docker'a. Poniżej lista w jaki sposób zbudować i uruchomić własny obraz ze źródeł.
 
@@ -17,7 +24,9 @@ Aplikacja jest uruchamiana jako obraz Docker'a. Poniżej lista w jaki sposób zb
 
 * Wykonać komendę budującą obraz (. jeśli w folderze z artefaktem /build/libs/): ```docker build -t ayloro/network-manager-server .```
 
-* Uruchomić bazę danych oraz aplikację poprzez wykonanie komendy w folderze z plikiem \textit{docker-compose.yml}: ```docker-compose up --build```
+* Uruchomić bazę danych oraz aplikację poprzez wykonanie komendy w folderze z plikiem *docker-compose.yml*: ```docker-compose up --build```
+
+### Po pierwszym uruchomieniu
 
 * Po pierwszym uruchomieniu bazy danych należy udać się na stronę bazy danych(localhost:7474 lub o innym adresie np. dla Windows: 192.168.99.100:7474), aby utworzyć nowego użytkownika potrzebnego aplikacji. Aplikacja domyślnie spróbuje się połączyć za pomocą użytkownika: __networkManager__ i hasła: __appPassword__. Zmienić to można w pliku konfiguracyjnym:  ```/src/main/resources/application.yml``` Taka zmiana wymagała będzie ponownego zbudowania artefaktu części serwerowej oraz zbudowania obrazu.
 
